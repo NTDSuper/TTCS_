@@ -1,0 +1,85 @@
+<!-- result.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Unao - Diagnosis Result{% endblock %}
+
+{% block content %}
+
+<div class="text-[#003A43] text-xl">
+    <div class="mx-50 mt-20">
+        <div class="bg-[#F1FCFD] mx-50 p-10 rounded-2xl text-center">
+            <div class="text-2xl font-bold mb-5">
+                Diagnosis Result
+            </div>
+            <div class="mb-5">
+                Result: <strong class="text-green-700">{{ result }}</strong>
+            </div>
+            {# Hiển thị ảnh đã tải lên bằng base64 string #}
+            <img src="data:image/png;base64,{{image64}}" class="w-1/2 mx-auto my-10" alt="Uploaded image for diagnosis">
+
+            {# Link quay lại trang chẩn đoán #}
+            <a href="{% url 'pages:diagnose' %}">
+                <div
+                    class="text-white bg-[#003A43] w-fit px-5 py-2 text-center mx-auto rounded-3xl hover:cursor-pointer hover:bg-[#76AEB7] transition">
+                    Upload another file
+                </div>
+            </a>
+        </div>
+
+        {# Khu vực hiển thị lịch sử CỦA NGƯỜI DÙNG HIỆN TẠI #}
+        {# Biến 'history' giờ chỉ chứa lịch sử của user hiện tại #}
+        <div class="rounded-2xl mt-30 py-5 px-10">
+            <div class="text-center text-3xl font-bold mb-5">
+                History ({{ user.username }}) {# Có thể thêm tên người dùng đang đăng nhập #}
+            </div>
+            {# Kiểm tra xem biến 'history' (lịch sử của user hiện tại) có tồn tại và không rỗng không #}
+            {% if history %}
+            <table class="table-auto w-full border-spacing-y-1 border-separate">
+                <thead>
+                    <tr class="bg-[#C1DBDF]">
+                        <th class="p-2">
+                            Download
+                        </th>
+                        <th>
+                            No.
+                        </th>
+                        <th>
+                            Result
+                        </th>
+                        <th>
+                            Date
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    {# Lặp qua từng item trong lịch sử của user hiện tại #}
+                    {% for item in history %}
+                    <tr class="bg-[#F1FCFD]">
+                        <td>
+                            {% if item.file and item.filename_display != "No file" %}
+                                <a href="{{ item.file.url }}" download="{{ item.filename_display }}">
+                                    <div class="text-white bg-[#003A43] w-fit px-5 py-2 text-center mx-auto rounded-3xl hover:cursor-pointer hover:bg-[#76AEB7] transition">
+                                        Download
+                                    </div>
+                                </a>
+                            {% else %}
+                                N/A
+                            {% endif %}
+                        </td>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ item.result }}</td>
+                        <td>{{ item.date|date:"H:i d/m/Y" }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %} {# Nếu lịch sử của user hiện tại rỗng #}
+                <p class="text-center">There is no diagnostic history for this account.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{# Script này không cần thiết ở đây #}
+{% endblock content %}

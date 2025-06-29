@@ -1,0 +1,31 @@
+<!-- pages/templates/pages/faq.html -->
+{% extends 'base.html' %}
+
+{% block title %}FAQ{% endblock %}
+
+{% block content %}
+
+<div class="bg-[#F1FCFD] mt-30 rounded-3xl py-15 px-40 mx-40 flex flex-col gap-3">
+    <h1 class="font-semibold text-3xl">Frequently Asked Questions (FAQ)</h1>
+
+<h2 class="font-semibold text-2xl">About Application</h2>
+<p><strong>Q: What is this app used for?</strong></p>
+<p>A: This app uses a machine learning model to predict the likelihood of having a brain tumor based on uploaded MRI images.</p>
+
+<p><strong>Q: Is this a medical diagnosis?</strong></p>
+<p>A: <strong>Absolutely not.</strong> This tool is for informational and educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider with any questions you may have regarding a medical condition.</p>
+
+<h2>About Use</h2>
+<p><strong>Q: What type of photos should I upload?</strong></p>
+<p>A: Please upload clear brain MRI scan images in common formats such as JPG, JPEG or PNG.</p>
+
+<p><strong>Q: How accurate is the prediction?</strong></p>
+<p>A: The model is trained on a specific dataset and its accuracy depends on many factors, including image quality and similarity to the training data. It provides a prediction based on learned patterns, but it is not infallible.</p>
+
+<p><strong>Q: How will the images I upload be processed?</strong></p>
+<p>A: Uploaded images will be temporarily stored for processing and prediction. Please refer to our Privacy Policy (not yet available) for details on data processing. In this demo, images can be deleted after processing or temporarily stored in the `media` folder.</p>
+</div>
+
+<!-- Thêm các câu hỏi và trả lời khác nếu cần -->
+
+{% endblock content %}

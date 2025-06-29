@@ -1,0 +1,96 @@
+<!-- accounts/templates/registration/signup.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %} {# Load widget_tweaks #}
+
+{% block title %}Unao - Sign Up{% endblock %}
+
+{% block content %}
+
+<div class="mx-60 mt-30 text-[#003A43] text-xl">
+    <div
+        class="border-5 border-[#76AEB7] rounded-2xl p-10 w-1/2 mx-auto text-center flex flex-col items-center">
+        <div class="font-bold text-3xl mb-3">
+            Sign up
+        </div>
+        {# Bắt đầu form - method POST #}
+        <form method="post">
+            {% csrf_token %} {# Thẻ CSRF token #}
+
+             {# Hiển thị lỗi form chung (non-field errors) #}
+             {# UserCreationForm có thể có non_field_errors cho mật khẩu không khớp #}
+            {% if form.non_field_errors %}
+                <div class="text-red-500 mb-4 text-base">
+                    {% for error in form.non_field_errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            {# Render trường username và giữ class Tailwind #}
+            {# `form.username` truy cập trường 'username' của SignUpForm #}
+            <div class="w-full max-w-xs flex flex-col items-center">
+                {% render_field form.username class="rounded-2xl border-[#76AEB7] border-2 py-1 px-2 mb-2 w-full" placeholder="Username" %}
+                {% for error in form.username.errors %}
+                    <p class="text-red-500 text-sm mb-2">{{ error }}</p>
+                {% endfor %}
+            </div>
+
+            {# Render trường email và giữ class Tailwind (từ SignUpForm tùy chỉnh) #}
+             <div class="w-full max-w-xs flex flex-col items-center">
+                {% render_field form.email class="rounded-2xl border-[#76AEB7] border-2 py-1 px-2 mb-2 w-full" placeholder="Email" %}
+                 {% for error in form.email.errors %}
+                    <p class="text-red-500 text-sm mb-2">{{ error }}</p>
+                {% endfor %}
+            </div>
+
+             {# Render trường first_name và giữ class Tailwind (nếu có trong form) #}
+             {% if form.first_name %} {# Kiểm tra trường có tồn tại trong form không #}
+                 <div class="w-full max-w-xs flex flex-col items-center">
+                    {% render_field form.first_name class="rounded-2xl border-[#76AEB7] border-2 py-1 px-2 mb-2 w-full" placeholder="First Name" %}
+                    {% for error in form.first_name.errors %}
+                        <p class="text-red-500 text-sm mb-2">{{ error }}</p>
+                    {% endfor %}
+                </div>
+             {% endif %}
+
+             {# Render trường last_name và giữ class Tailwind (nếu có trong form) #}
+             {% if form.last_name %} {# Kiểm tra trường có tồn tại trong form không #}
+                <div class="w-full max_w_xs flex flex-col items-center">
+                    {% render_field form.last_name class="rounded-2xl border-[#76AEB7] border-2 py-1 px-2 mb-2 w-full" placeholder="Last Name" %}
+                    {% for error in form.last_name.errors %}
+                        <p class="text-red-500 text-sm mb-2">{{ error }}</p>
+                    {% endfor %}
+                </div>
+             {% endif %}
+
+
+            {# Render trường password1 (password) và giữ class Tailwind #}
+            {# UserCreationForm có 2 trường password: password1 và password2 #}
+            <div class="w-full max-w-xs flex flex-col items-center">
+                {% render_field form.password1 class="rounded-2xl border-[#76AEB7] border-2 py-1 px-2 mb-2 w-full" placeholder="Password" %}
+                {% for error in form.password1.errors %}
+                    <p class="text-red-500 text-sm mb-2">{{ error }}</p>
+                {% endfor %}
+            </div>
+
+            {# Render trường password2 (password confirmation) và giữ class Tailwind #}
+            <div class="w-full max-w-xs flex flex-col items-center">
+                {% render_field form.password2 class="rounded-2xl border-[#76AEB7] border-2 py-1 px-2 mb-5 w-full" placeholder="Password (repeat)" %}
+                 {% for error in form.password2.errors %}
+                    <p class="text-red-500 text-sm mb-2">{{ error }}</p>
+                {% endfor %}
+            </div>
+
+
+            {# Nút Sign up - Thay div bằng button type="submit" và giữ class #}
+            <button type="submit" class="bg-[#FF8D6F] font-medium rounded-2xl py-2 px-5 w-fit">Sign up</button>
+
+        </form>
+        {# Kết thúc form #}
+
+        {# Tùy chọn: Thêm link đến trang đăng nhập #}
+        <p class="mt-3 text-base">Already have an account? <a href="{% url 'accounts:login' %}" class="text-[#003A43] font-semibold">Login</a></p> {# Sử dụng namespace accounts: #}
+    </div>
+</div>
+{% endblock content %}

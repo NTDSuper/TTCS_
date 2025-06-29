@@ -1,0 +1,12 @@
+html {
+    font-family: "Montserrat", sans-serif;
+}
+
+.gradient {
+    /* Sử dụng biến CSS hoặc giá trị màu trực tiếp nếu cần */
+    background: linear-gradient(155deg, #FF8D6F 0%, #003A43 40%, #003A43 80%, #76AEB7 100%);
+}
+
+.gradient-2 {
+    background: linear-gradient(30deg, #003A43 0%, #76AEB7 100%);
+}
