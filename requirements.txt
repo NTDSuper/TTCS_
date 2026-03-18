@@ -1,0 +1,11 @@
+# Brain Tumor Prediction - Python dependencies
+# Install once (or reinstall anytime) with:
+# python -m pip install -r requirements.txt
+
+numpy>=1.26,<3.0
+opencv-python>=4.9,<5.0
+Pillow>=10.0,<12.0
+scikit-learn>=1.4,<2.0
+Flask>=3.0,<4.0
+Werkzeug>=3.0,<4.0
+tensorflow==2.19.0

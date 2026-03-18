@@ -1,0 +1,98 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000; /* Background color for the app (black) */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    background-color: #ffffff; /* White background for the content container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Adjust width as needed */
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000; /* Text color for 'Prediction:' (black) */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+span {
+    font-size: 22px; /* Adjust the size as needed */
+    display: inline-block; /* Ensure the span element behaves as inline-block */
+    text-align: center; /* Center align the text inside span */
+}
+
+.error {
+    color: #d32f2f;
+    background-color: #fdecea;
+    border: 1px solid #d32f2f;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.brain-tumor {
+    color: red; /* Color for 'Brain Tumor' */
+}
+
+.normal {
+    color: green; /* Color for 'Normal' */
+}

@@ -1,0 +1,158 @@
+Epoch 1 started at 2024-08-02 23:05:32.034863
+Epoch 1 - Loss: 0.5669, Accuracy: 0.6963, Val_Loss: 0.4873, Val_Accuracy: 0.7700
+Epoch 2 started at 2024-08-02 23:05:33.805086
+Epoch 2 - Loss: 0.4567, Accuracy: 0.8012, Val_Loss: 0.4069, Val_Accuracy: 0.8150
+Epoch 3 started at 2024-08-02 23:05:34.562699
+Epoch 3 - Loss: 0.3756, Accuracy: 0.8379, Val_Loss: 0.3021, Val_Accuracy: 0.8683
+Epoch 4 started at 2024-08-02 23:05:35.315726
+Epoch 4 - Loss: 0.2759, Accuracy: 0.8888, Val_Loss: 0.2187, Val_Accuracy: 0.9117
+Epoch 5 started at 2024-08-02 23:05:36.084578
+Epoch 5 - Loss: 0.2007, Accuracy: 0.9142, Val_Loss: 0.1507, Val_Accuracy: 0.9483
+Epoch 6 started at 2024-08-02 23:05:36.854921
+Epoch 6 - Loss: 0.1319, Accuracy: 0.9546, Val_Loss: 0.1372, Val_Accuracy: 0.9650
+Epoch 7 started at 2024-08-02 23:05:37.614497
+Epoch 7 - Loss: 0.0918, Accuracy: 0.9700, Val_Loss: 0.1612, Val_Accuracy: 0.9567
+Epoch 8 started at 2024-08-02 23:05:38.375179
+Epoch 8 - Loss: 0.0723, Accuracy: 0.9771, Val_Loss: 0.1149, Val_Accuracy: 0.9683
+Epoch 9 started at 2024-08-02 23:05:39.134418
+Epoch 9 - Loss: 0.0582, Accuracy: 0.9800, Val_Loss: 0.1054, Val_Accuracy: 0.9717
+Epoch 10 started at 2024-08-02 23:05:39.891414
+Epoch 10 - Loss: 0.0505, Accuracy: 0.9829, Val_Loss: 0.0843, Val_Accuracy: 0.9817
+Epoch 11 started at 2024-08-02 23:05:40.638933
+Epoch 11 - Loss: 0.0293, Accuracy: 0.9879, Val_Loss: 0.0937, Val_Accuracy: 0.9750
+Epoch 12 started at 2024-08-02 23:05:41.385460
+Epoch 12 - Loss: 0.0278, Accuracy: 0.9921, Val_Loss: 0.0962, Val_Accuracy: 0.9700
+Epoch 13 started at 2024-08-02 23:05:42.138445
+Epoch 13 - Loss: 0.0233, Accuracy: 0.9925, Val_Loss: 0.1471, Val_Accuracy: 0.9667
+Epoch 14 started at 2024-08-02 23:05:42.880459
+Epoch 14 - Loss: 0.0198, Accuracy: 0.9937, Val_Loss: 0.1002, Val_Accuracy: 0.9783
+Epoch 15 started at 2024-08-02 23:05:43.625437
+Epoch 15 - Loss: 0.0098, Accuracy: 0.9962, Val_Loss: 0.0810, Val_Accuracy: 0.9833
+Epoch 1 started at 2024-08-15 21:58:06.519945
+Epoch 1 - Loss: 0.4979, Accuracy: 0.7658, Val_Loss: 0.4992, Val_Accuracy: 0.7550
+Epoch 2 started at 2024-08-15 21:58:08.848936
+Epoch 2 - Loss: 0.3868, Accuracy: 0.8438, Val_Loss: 0.4152, Val_Accuracy: 0.8200
+Epoch 3 started at 2024-08-15 21:58:09.843652
+Epoch 3 - Loss: 0.2916, Accuracy: 0.8858, Val_Loss: 0.4344, Val_Accuracy: 0.8067
+Epoch 4 started at 2024-08-15 21:58:10.924406
+Epoch 4 - Loss: 0.2171, Accuracy: 0.9158, Val_Loss: 0.2922, Val_Accuracy: 0.8750
+Epoch 5 started at 2024-08-15 21:58:11.950275
+Epoch 5 - Loss: 0.1492, Accuracy: 0.9521, Val_Loss: 0.2547, Val_Accuracy: 0.9017
+Epoch 6 started at 2024-08-15 21:58:12.937608
+Epoch 6 - Loss: 0.1031, Accuracy: 0.9650, Val_Loss: 0.1998, Val_Accuracy: 0.9250
+Epoch 7 started at 2024-08-15 21:58:14.004440
+Epoch 7 - Loss: 0.0801, Accuracy: 0.9775, Val_Loss: 0.1627, Val_Accuracy: 0.9383
+Epoch 8 started at 2024-08-15 21:58:15.098919
+Epoch 8 - Loss: 0.0497, Accuracy: 0.9837, Val_Loss: 0.1044, Val_Accuracy: 0.9700
+Epoch 9 started at 2024-08-15 21:58:16.094575
+Epoch 9 - Loss: 0.0504, Accuracy: 0.9858, Val_Loss: 0.1414, Val_Accuracy: 0.9600
+Epoch 10 started at 2024-08-15 21:58:17.101719
+Epoch 10 - Loss: 0.0313, Accuracy: 0.9917, Val_Loss: 0.1791, Val_Accuracy: 0.9500
+Epoch 11 started at 2024-08-15 21:58:18.165234
+Epoch 11 - Loss: 0.0312, Accuracy: 0.9887, Val_Loss: 0.1339, Val_Accuracy: 0.9617
+Epoch 12 started at 2024-08-15 21:58:19.191500
+Epoch 12 - Loss: 0.0240, Accuracy: 0.9925, Val_Loss: 0.1529, Val_Accuracy: 0.9600
+Epoch 13 started at 2024-08-15 21:58:20.255477
+Epoch 13 - Loss: 0.0229, Accuracy: 0.9933, Val_Loss: 0.1059, Val_Accuracy: 0.9717
+Epoch 14 started at 2024-08-15 21:58:21.294348
+Epoch 14 - Loss: 0.0157, Accuracy: 0.9946, Val_Loss: 0.1727, Val_Accuracy: 0.9600
+Epoch 15 started at 2024-08-15 21:58:22.371454
+Epoch 15 - Loss: 0.0092, Accuracy: 0.9971, Val_Loss: 0.1396, Val_Accuracy: 0.9717
+Epoch 1 started at 2026-03-09 02:30:07.941724
+Epoch 1 - Loss: 0.3495, Accuracy: 0.8733, Val_Loss: 0.1306, Val_Accuracy: 0.9650
+Epoch 2 started at 2026-03-09 02:32:09.198465
+Epoch 2 - Loss: 0.1186, Accuracy: 0.9762, Val_Loss: 0.2102, Val_Accuracy: 0.9633
+Epoch 3 started at 2026-03-09 02:34:02.595831
+Epoch 3 - Loss: 0.1060, Accuracy: 0.9783, Val_Loss: 0.1737, Val_Accuracy: 0.9667
+Epoch 4 started at 2026-03-09 02:35:26.432267
+Epoch 4 - Loss: 0.0755, Accuracy: 0.9912, Val_Loss: 0.1421, Val_Accuracy: 0.9733
+Epoch 5 started at 2026-03-09 02:36:51.516074
+Epoch 5 - Loss: 0.0616, Accuracy: 0.9942, Val_Loss: 0.0726, Val_Accuracy: 0.9900
+Epoch 6 started at 2026-03-09 02:38:17.842257
+Epoch 6 - Loss: 0.0691, Accuracy: 0.9908, Val_Loss: 0.0865, Val_Accuracy: 0.9900
+Epoch 7 started at 2026-03-09 02:39:44.431410
+Epoch 7 - Loss: 0.0564, Accuracy: 0.9962, Val_Loss: 0.0607, Val_Accuracy: 0.9933
+Epoch 8 started at 2026-03-09 02:41:11.377409
+Epoch 8 - Loss: 0.0521, Accuracy: 0.9979, Val_Loss: 0.0698, Val_Accuracy: 0.9900
+Epoch 9 started at 2026-03-09 02:42:38.328799
+Epoch 9 - Loss: 0.0519, Accuracy: 0.9954, Val_Loss: 0.1077, Val_Accuracy: 0.9833
+Epoch 10 started at 2026-03-09 02:44:03.620719
+Epoch 10 - Loss: 0.0471, Accuracy: 0.9975, Val_Loss: 0.0748, Val_Accuracy: 0.9900
+Epoch 11 started at 2026-03-09 02:45:28.292300
+Epoch 11 - Loss: 0.0447, Accuracy: 0.9996, Val_Loss: 0.0826, Val_Accuracy: 0.9900
+Epoch 1 started at 2026-03-15 05:43:01.272775
+Epoch 1 - Loss: 0.3406, Accuracy: 0.8696, Val_Loss: 0.2470, Val_Accuracy: 0.9317
+Epoch 2 started at 2026-03-15 05:44:51.976630
+Epoch 2 - Loss: 0.1521, Accuracy: 0.9533, Val_Loss: 0.2511, Val_Accuracy: 0.9583
+Epoch 3 started at 2026-03-15 05:46:32.727541
+Epoch 3 - Loss: 0.1341, Accuracy: 0.9671, Val_Loss: 0.0817, Val_Accuracy: 0.9883
+Epoch 4 started at 2026-03-15 05:48:14.605448
+Epoch 4 - Loss: 0.0989, Accuracy: 0.9829, Val_Loss: 0.1377, Val_Accuracy: 0.9667
+Epoch 5 started at 2026-03-15 05:49:54.006508
+Epoch 5 - Loss: 0.0753, Accuracy: 0.9896, Val_Loss: 0.0967, Val_Accuracy: 0.9783
+Epoch 6 started at 2026-03-15 05:51:34.088197
+Epoch 6 - Loss: 0.0545, Accuracy: 0.9962, Val_Loss: 0.0672, Val_Accuracy: 0.9900
+Epoch 7 started at 2026-03-15 05:53:15.136298
+Epoch 7 - Loss: 0.0528, Accuracy: 0.9958, Val_Loss: 0.0842, Val_Accuracy: 0.9900
+Epoch 8 started at 2026-03-15 05:54:55.479930
+Epoch 8 - Loss: 0.0497, Accuracy: 0.9962, Val_Loss: 0.0743, Val_Accuracy: 0.9883
+Epoch 9 started at 2026-03-15 05:56:37.256857
+Epoch 9 - Loss: 0.0473, Accuracy: 0.9975, Val_Loss: 0.0721, Val_Accuracy: 0.9900
+Epoch 10 started at 2026-03-15 05:58:19.137598
+Epoch 10 - Loss: 0.0460, Accuracy: 0.9987, Val_Loss: 0.0751, Val_Accuracy: 0.9883
+Epoch 1 started at 2026-03-15 11:22:19.217599
+Epoch 1 - Loss: 0.3288, Accuracy: 0.8817, Val_Loss: 0.1314, Val_Accuracy: 0.9750
+Epoch 2 started at 2026-03-15 11:23:56.496551
+Epoch 2 - Loss: 0.1536, Accuracy: 0.9579, Val_Loss: 0.1015, Val_Accuracy: 0.9783
+Epoch 3 started at 2026-03-15 11:25:27.443930
+Epoch 3 - Loss: 0.0985, Accuracy: 0.9817, Val_Loss: 0.0773, Val_Accuracy: 0.9900
+Epoch 4 started at 2026-03-15 11:26:58.792352
+Epoch 4 - Loss: 0.1225, Accuracy: 0.9683, Val_Loss: 0.0887, Val_Accuracy: 0.9917
+Epoch 5 started at 2026-03-15 11:28:24.476945
+Epoch 5 - Loss: 0.0859, Accuracy: 0.9854, Val_Loss: 0.0941, Val_Accuracy: 0.9750
+Epoch 6 started at 2026-03-15 11:29:50.999760
+Epoch 6 - Loss: 0.0582, Accuracy: 0.9942, Val_Loss: 0.0688, Val_Accuracy: 0.9883
+Epoch 7 started at 2026-03-15 11:31:16.737060
+Epoch 7 - Loss: 0.0502, Accuracy: 0.9958, Val_Loss: 0.0563, Val_Accuracy: 0.9950
+Epoch 8 started at 2026-03-15 11:32:43.180949
+Epoch 8 - Loss: 0.0528, Accuracy: 0.9946, Val_Loss: 0.0762, Val_Accuracy: 0.9833
+Epoch 9 started at 2026-03-15 11:34:08.628504
+Epoch 9 - Loss: 0.0527, Accuracy: 0.9950, Val_Loss: 0.0567, Val_Accuracy: 0.9883
+Epoch 10 started at 2026-03-15 11:35:34.704475
+Epoch 10 - Loss: 0.0442, Accuracy: 0.9992, Val_Loss: 0.0571, Val_Accuracy: 0.9883
+Epoch 11 started at 2026-03-15 11:37:01.167188
+Epoch 11 - Loss: 0.0467, Accuracy: 0.9979, Val_Loss: 0.0599, Val_Accuracy: 0.9883
+Epoch 1 started at 2026-03-15 21:37:41.383893
+Epoch 1 - Loss: 0.3273, Accuracy: 0.8858, Val_Loss: 0.1508, Val_Accuracy: 0.9700
+Epoch 2 started at 2026-03-15 21:39:44.392819
+Epoch 2 - Loss: 0.1403, Accuracy: 0.9683, Val_Loss: 0.1989, Val_Accuracy: 0.9483
+Epoch 3 started at 2026-03-15 21:41:58.649906
+Epoch 3 - Loss: 0.1091, Accuracy: 0.9783, Val_Loss: 0.0934, Val_Accuracy: 0.9833
+Epoch 4 started at 2026-03-15 21:45:25.894389
+Epoch 4 - Loss: 0.0831, Accuracy: 0.9862, Val_Loss: 0.0730, Val_Accuracy: 0.9917
+Epoch 5 started at 2026-03-15 21:49:07.098031
+Epoch 5 - Loss: 0.0713, Accuracy: 0.9892, Val_Loss: 0.0905, Val_Accuracy: 0.9883
+Epoch 6 started at 2026-03-15 21:54:37.548720
+Epoch 6 - Loss: 0.0828, Accuracy: 0.9850, Val_Loss: 0.2556, Val_Accuracy: 0.9367
+Epoch 7 started at 2026-03-15 21:59:59.583572
+Epoch 7 - Loss: 0.0570, Accuracy: 0.9967, Val_Loss: 0.0726, Val_Accuracy: 0.9883
+Epoch 8 started at 2026-03-15 22:04:52.801549
+Epoch 8 - Loss: 0.0488, Accuracy: 0.9983, Val_Loss: 0.0585, Val_Accuracy: 0.9933
+Epoch 9 started at 2026-03-15 22:08:55.171732
+Epoch 9 - Loss: 0.0469, Accuracy: 0.9975, Val_Loss: 0.0581, Val_Accuracy: 0.9917
+Epoch 10 started at 2026-03-15 22:13:05.368234
+Epoch 10 - Loss: 0.0432, Accuracy: 0.9992, Val_Loss: 0.0579, Val_Accuracy: 0.9933
+Epoch 11 started at 2026-03-15 22:17:19.202738
+Epoch 11 - Loss: 0.0502, Accuracy: 0.9975, Val_Loss: 0.0775, Val_Accuracy: 0.9833
+Epoch 12 started at 2026-03-15 22:21:19.558184
+Epoch 12 - Loss: 0.0424, Accuracy: 0.9992, Val_Loss: 0.0556, Val_Accuracy: 0.9900
+Epoch 13 started at 2026-03-15 22:25:32.000462
+Epoch 13 - Loss: 0.0437, Accuracy: 0.9983, Val_Loss: 0.0516, Val_Accuracy: 0.9917
+Epoch 14 started at 2026-03-15 22:29:14.954713
+Epoch 14 - Loss: 0.0423, Accuracy: 0.9992, Val_Loss: 0.0521, Val_Accuracy: 0.9933
+Epoch 15 started at 2026-03-15 22:33:13.816564
+Epoch 15 - Loss: 0.0446, Accuracy: 0.9983, Val_Loss: 0.0660, Val_Accuracy: 0.9883
+Epoch 16 started at 2026-03-15 22:37:19.504326
+Epoch 16 - Loss: 0.0407, Accuracy: 0.9992, Val_Loss: 0.0613, Val_Accuracy: 0.9867
+Epoch 17 started at 2026-03-15 22:41:33.762966
+Epoch 17 - Loss: 0.0412, Accuracy: 0.9987, Val_Loss: 0.0592, Val_Accuracy: 0.9900
