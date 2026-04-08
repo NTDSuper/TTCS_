@@ -1,0 +1,140 @@
+<!-- diagnose.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Unao - Diagnose{% endblock %}
+
+{% block content %}
+
+<div class="text-[#003A43] text-xl">
+    <div class="mx-50 mt-20">
+        {# Form gửi file ảnh lên URL 'pages:predict' #}
+        <form action="{% url 'pages:predict' %}" method="post"  enctype="multipart/form-data" novalidate>
+            {% csrf_token %}
+            {# Div hiển thị ban đầu khi chưa chọn file #}
+            <div class="border-3 border-[#003A43] mx-50 p-10 rounded-2xl text-center" id="firstUpload">
+                <img src="{% static 'upload.svg'%}" class="w-16 mx-auto mb-10" alt="Upload icon">
+                <label for="upload" class="">
+                    <div
+                        class="text-white bg-[#003A43] w-fit px-5 py-2 text-center mx-auto rounded-3xl hover:cursor-pointer hover:bg-[#76AEB7] transition">
+                        Upload file
+                    </div>
+                </label>
+                {# Input file thực tế. onchange gọi hàm uploadFile(). #}
+                <input id="upload" name="xray" class="hidden" type="file" onchange="uploadFile(this)" accept="image/*">
+            </div>
+
+            {# Div hiển thị sau khi đã chọn file (chứa ảnh preview và nút Diagnose) #}
+            <div class="bg-[#F1FCFD] mx-50 p-10 rounded-2xl text-center hidden" id="previewDiv">
+                {# Ảnh preview. src sẽ được cập nhật bằng JavaScript. #}
+                <img src="#" id="previewImage" class="w-1/2 mx-auto mb-10" alt="Image preview">
+
+                <div class="flex justify-center gap-3">
+                    {# Nút "Change file". Chuyển hướng về trang /diagnose/ để reset form #}
+                    <a href="{% url 'pages:diagnose' %}">
+                        <div
+                            class="text-white bg-[#003A43] w-fit px-5 py-2 text-center mx-auto rounded-3xl hover:cursor-pointer hover:bg-[#76AEB7] transition">
+                            Change file
+                        </div>
+                    </a>
+
+                    {# Label liên kết với input type="submit" ẩn #}
+                    <label for="submitButton" class="">
+                        <div>
+                            <div
+                                class="text-white bg-[#003A43] w-fit px-5 py-2 text-center mx-auto rounded-3xl hover:cursor-pointer hover:bg-[#76AEB7] transition">
+                                Diagnose
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                {# Input type="submit" thực tế nhưng ẩn. #}
+                <input id="submitButton" type="submit" class="hidden" value="Diagnose"/>
+            </div>
+        </form>
+
+        {# Hiển thị thông báo lỗi nếu có #}
+        {% if error %}
+            <div class="text-red-500 text-center mt-5">{{ error }}</div>
+        {% endif %}
+
+
+        {# Khu vực hiển thị lịch sử CỦA NGƯỜI DÙNG HIỆN TẠI #}
+        <div class="rounded-2xl mt-30 py-5 px-10">
+            <div class="text-center text-3xl font-bold mb-5">
+                History ({{ user.username }}) {# Có thể thêm tên người dùng đang đăng nhập #}
+            </div>
+            {# Biến 'history' giờ chỉ chứa lịch sử của user hiện tại #}
+            {% if history %}
+            <table class="table-auto w-full border-spacing-y-1 border-separate">
+                <thead>
+                    <tr class="bg-[#C1DBDF]">
+                        <th class="p-2">
+                            Download
+                        </th>
+                        <th>
+                            No.
+                        </th>
+                        <th>
+                            Result
+                        </th>
+                        <th>
+                            Date
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    {# Lặp qua từng item trong lịch sử của user hiện tại #}
+                    {% for item in history %}
+                    <tr class="bg-[#F1FCFD]">
+                        <td>
+                            {% if item.file and item.filename_display != "No file" %}
+                                <a href="{{ item.file.url }}" download="{{ item.filename_display }}">
+                                    <div class="text-white bg-[#003A43] w-fit px-5 py-2 text-center mx-auto rounded-3xl hover:cursor-pointer hover:bg-[#76AEB7] transition">
+                                        Download
+                                    </div>
+                                </a>
+                            {% else %}
+                                N/A
+                            {% endif %}
+                        </td>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ item.result }}</td>
+                        <td>{{ item.date|date:"H:i d/m/Y" }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %} {# Nếu lịch sử của user hiện tại rỗng #}
+                <p class="text-center">There is no diagnostic history for this account.</p>
+            {% endif %}
+        </div>
+
+    </div>
+</div>
+
+{# JavaScript để xử lý preview ảnh #}
+<script>
+const uploadInput = document.getElementById('upload');
+const firstUploadDiv = document.getElementById('firstUpload');
+const previewDiv = document.getElementById('previewDiv');
+const previewImage = document.getElementById('previewImage');
+
+const uploadFile = (input) => {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = (e) => {
+            previewImage.src = e.target.result;
+            firstUploadDiv.style.display = 'none';
+            previewDiv.style.display = 'block';
+        };
+        reader.readAsDataURL(input.files[0]);
+    } else {
+        // Nếu người dùng hủy chọn file, reset giao diện
+        previewImage.src = '#';
+        firstUploadDiv.style.display = 'block';
+        previewDiv.style.display = 'hidden';
+    }
+}
+</script>
+{% endblock content %}

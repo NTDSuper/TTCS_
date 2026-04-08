@@ -14,9 +14,9 @@ class FileLoggingCallback(tf.keras.callbacks.Callback):
     def on_epoch_end(self, epoch, logs=None):
         with open(self.log_file, 'a') as f:
             f.write(f"Epoch {epoch + 1} - ")
-            f.write(f"Loss: {logs.get('loss'):.4f}, ")
-            f.write(f"Accuracy: {logs.get('accuracy'):.4f}, ")
-            f.write(f"Val_Loss: {logs.get('val_loss'):.4f}, ")
+            f.write(f"Loss: {logs.get('loss'):.4f}, ") # độ mất mát của mô hình tăng dẫn đến khoogn phân biệt được sự khác nhau của các ảnh
+            f.write(f"Accuracy: {logs.get('accuracy'):.4f}, ") # độ chính xác tăng là tốt
+            f.write(f"Val_Loss: {logs.get('val_loss'):.4f}, ") # giá trị
             f.write(f"Val_Accuracy: {logs.get('val_accuracy'):.4f}\n")
 
     def on_batch_end(self, batch, logs=None):

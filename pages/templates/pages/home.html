@@ -1,0 +1,93 @@
+<!-- pages/templates/pages/home.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Unao - AI Brain Tumor Detection{% endblock %}
+
+{% block content %}
+
+{# --- Hero Section --- #}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unao</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+        <div class="ml-60 flex">
+            <div class="mt-15 basis-1/2 pr-40 flex flex-col gap-7">
+                <div class="font-semibold text-6xl leading-[1.1]">"Turning Medical Images into Hope – AI for Accurate Brain Tumor Detection"</div>
+                <div class="text-2xl">Brain tumors are abnormal growths of cells in the brain that can be either benign or malignant, affecting memory, movement, and even basic bodily functions. Early detection is crucial, but symptoms often appear late, making AI-powered diagnosis a promising breakthrough in healthcare.</div>
+                
+                <a href="{% url 'pages:diagnose' %}"
+                class="bg-[#FF8D6F] font-medium rounded-2xl py-2 px-5 w-fit no-underline text-current inline-block text-center"> {# Added no-underline, text-current, inline-block, text-center for better styling as a link #}
+                 Getting started
+             </a>
+            </div>
+            <div class="gradient basis-1/2 ml-10 rounded-bl-[50%]">
+                <img src="{% static 'anh.png' %}" class="w-5/6 -translate-x-20 translate-y-12" />
+            </div>
+        </div>
+
+        <div class="mx-60">
+            <div class="mt-50">
+                <div class="font-semibold text-3xl">Easy manipulation</div>
+                <div class="flex gap-10 mt-5">
+                    <div class="flex-1 bg-[#E1D4C9] p-5 rounded-3xl">
+                        <div class="font-medium text-center">Up file</div>
+                        <div class="text-base text-justify mb-5">
+                            upload the MRI image you need to diagnose whether it is a brain tumor or not
+                        </div>
+                        <img src="{% static 'up.png' %}" class="w-5/6 mx-auto">
+                    </div>
+                    <div class="flex-1 bg-[#C6D7D8] p-5 rounded-3xl">
+                        <div class="font-medium text-center">file processing</div>
+                        <div class="text-base text-justify mb-5">
+                            Check if the image is correct. If you want to modify it, you can click on change file. If it is correct, click diagnose.
+                        </div>
+                        <img src="{% static 'cho.png' %}" class="w-5/6 mx-auto">
+                    </div>
+                    <div class="flex-1 bg-[#FEE4E0] p-5 rounded-3xl">
+                        <div class="font-medium text-center">result</div>
+                        <div class="text-base text-justify mb-5">
+                            and finally in just seconds you can get an AI diagnosis to see if you are sick or not
+                        </div>
+                        <img src="{% static 'kq.png' %}" class="w-5/6 mx-auto">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-[#F1FCFD] mt-50 rounded-3xl py-15 px-40">
+                <div class="flex justify-between">
+                    <img src="{% static 'pythoned.png' %}" class="w-1/5 mx-auto">
+                </div>
+                <div class="font-semibold text-6xl leading-[1.1] text-center">This AI model uses ResNet-50 to detect brain tumors from MRI images with high accuracy and fast processing speed.
+                </div>
+                <div class="text-2xl text-center pt-5">ResNet-50 is a powerful deep neural network for image classification, especially effective with medical images like brain MRIs. It can detect brain tumors and differentiate between benign and malignant types. With high accuracy (90%-97%), it helps identify abnormalities that are hard to detect visually, offering promising support for early and accurate diagnosis using AI.</div>
+            </div>
+
+            <div class="gradient-2 rounded-3xl mt-30 px-45 py-20">
+                <div class="text-white text-5xl font-semibold">"AI không thay thế chúng tôi, nhưng nó giúp chúng tôi nhìn sâu hơn, nhanh hơn – và đôi khi, cứu được một mạng sống mà lẽ ra đã bị bỏ sót."</div>
+                <div class="flex mt-10 gap-5 items-center">
+                    <img src="anh.png" class="rounded-full w-28 h-28" />
+                    <div class="text-white italic">Bác sĩ Pháo <br />Khoa CTCH, BV RHM</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+{% endblock content %}

@@ -1,0 +1,78 @@
+<!-- templates/base.html -->
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Unao - Brain Tumor Detection{% endblock %}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+
+    {# --- Block for extra CSS from child templates --- #}
+    {% block extra_css %}{% endblock %}
+
+</head>
+<body>
+    <div class="text-[#003A43] text-xl"> 
+        <div class="flex items-center px-4 sm:px-10 md:px-20 py-5 sm:py-7 border-b border-b-[#003A43]">
+            <div class="font-black text-2xl sm:text-3xl">
+                <a href="{% url 'pages:home' %}">unao</a>
+            </div>
+            <div class="flex flex-1 justify-center gap-6 sm:gap-10 text-lg sm:text-xl">
+                <a href="{% url 'pages:diagnose' %}" class="hover:text-[#FF8D6F]">Diagnose</a>
+                <a href="{% url 'pages:faq' %}" class="hover:text-[#FF8D6F]">Documentation</a> {# Link tạm đến FAQ #}
+                <a href="{% url 'pages:contact' %}" class="hover:text-[#FF8D6F]">Contact</a>
+            </div>
+            <div class="flex items-center gap-3 sm:gap-5 text-sm sm:text-base">
+                {% if user.is_authenticated %}
+                     <span class="hidden sm:inline">Hello, {{ user.username }}!</span>
+                     {# Nút Logout giữ nguyên style nền cam #}
+                     <a href="{% url 'logout' %}" class="bg-[#FF8D6F] text-white rounded-2xl py-2 px-4 sm:px-5 hover:bg-opacity-80 transition">Logout</a>
+                {% else %}
+                     {# SỬA LẠI STYLE CHO NÚT LOGIN GIỐNG NÚT SIGN UP #}
+                     <a href="{% url 'login' %}" class="bg-[#FF8D6F] text-white rounded-2xl py-2 px-4 sm:px-5 hover:bg-opacity-80 transition">Login</a>
+                     <a href="{% url 'accounts:signup' %}" class="bg-[#FF8D6F] text-white rounded-2xl py-2 px-4 sm:px-5 hover:bg-opacity-80 transition">Sign up</a>
+                {% endif %}
+            </div>
+        </div>
+        
+        {# --- Main Content Block (to be filled by child templates) --- #}
+        <div> {# Add flex-grow to push footer down #}
+            {% block content %}
+            {% endblock content %}
+        </div>
+        
+        {# --- Footer --- #}
+        <div class="bg-[#003A43] text-white mt-30 px-4 sm:px-10 md:px-60 pt-10">
+            <div class="text-3xl font-bold text-center">unao</div>
+            <nav class="flex flex-wrap justify-center gap-x-6 sm:gap-x-10 gap-y-2 text-base mt-5 mb-10">
+                <a href="{% url 'pages:home' %}" class="hover:text-[#FF8D6F]">Homepage</a>
+                <a href="{% url 'pages:diagnose' %}" class="hover:text-[#FF8D6F]">Diagnose</a>
+                <a href="{% url 'pages:faq' %}" class="hover:text-[#FF8D6F]">Documentation</a> 
+                <a href="{% url 'pages:contact' %}" class="hover:text-[#FF8D6F]">Contact</a>
+                {% if not user.is_authenticated %}
+                <a href="{% url 'login' %}" class="hover:text-[#FF8D6F]">Login</a>
+                <a href="{% url 'accounts:signup' %}" class="hover:text-[#FF8D6F]">Sign-up</a>
+                {% endif %}
+            </nav>
+            
+            <hr class="border-[#76AEB7]" />
+            <div class="text-base py-5 text-center">
+                Copyright © {% now "Y" %} an & Nhóm 4 thực tập cơ sở
+            </div>
+        </div>
+        
+    </div>
+    {# --- Block for extra JS from child templates --- #}
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
