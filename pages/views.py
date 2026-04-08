@@ -8,6 +8,7 @@ from io import BytesIO
 import base64
 import cv2
 from keras.models import load_model
+from tensorflow.keras.applications.resnet50 import preprocess_input
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required # Import decorator này
 from django.conf import settings # Cần import settings để tham chiếu AUTH_USER_MODEL
@@ -122,9 +123,10 @@ def predict(request):
                  })
 
         image_cv2_rgb = cv2.cvtColor(image_cv2, cv2.COLOR_BGR2RGB)
-        image_resized = cv2.resize(image_cv2_rgb, (64, 64))
-        image_np_array = np.array(image_resized)
+        image_resized = cv2.resize(image_cv2_rgb, (224, 224))
+        image_np_array = np.array(image_resized, dtype=np.float32)
         input_img = np.expand_dims(image_np_array, axis=0)
+        input_img = preprocess_input(input_img)
 
         if model:
             print("Performing prediction...")

@@ -1,12 +1,12 @@
-
 import os
 import cv2
-from PIL import Image
 import numpy as np
 from tensorflow.keras.models import load_model
+from tensorflow.keras.applications.resnet50 import preprocess_input
 
 # Đường dẫn đến mô hình đã huấn luyện
-model_path = 'D:/BRT350/brain_tumor/Braintumor10EpochsCategorical.h5'
+project_root = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(project_root, 'Braintumor10EpochsCategorical.h5')
 model = load_model(model_path)
 
 # Hàm xử lý ảnh
@@ -20,14 +20,14 @@ def preprocess_image(image_path):
     if image is None:
         raise FileNotFoundError(f"Không thể tải ảnh tại đường dẫn: {image_path}")
 
-    # Chuyển đổi ảnh sang định dạng RGB
-    image = Image.fromarray(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
-    image = image.resize((64, 64))
-    image = np.array(image)
+    # Chuyển đổi ảnh sang RGB + resize đúng chuẩn train
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    image = cv2.resize(image, (224, 224))
+    image = np.array(image, dtype=np.float32)
     return image
 
 # Đường dẫn đến ảnh cần dự đoán
-image_path = 'D:/BRT350/brain_tumor/pred/pred0.jpg'
+image_path = os.path.join(project_root, 'pred', 'pred0.jpg')
 
 try:
     # Tiền xử lý ảnh
@@ -35,6 +35,7 @@ try:
 
     # Thêm chiều kích cho ảnh
     input_img = np.expand_dims(input_img, axis=0)
+    input_img = preprocess_input(input_img)
 
     # Dự đoán
     prediction = model.predict(input_img)
